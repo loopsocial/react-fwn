@@ -64,15 +64,5 @@
       "pre-commit": "lint-staged",
       "pre-push": "npm test"
     }
-  },
-  "lint-staged": {
-    "src/**/*.js": [
-      "npm run build",
-      "git add ./dist --",
-      "npm run build-storybook",
-      "git add ./docs",
-      "eslint --fix",
-      "prettier --write"
-    ]
   }
 }
