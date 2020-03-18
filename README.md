@@ -9,7 +9,7 @@ npm install --save react-fwn
 
 ## Usage
 
-[Demo][] - [Demo source code][]
+[Storybook][https://loopsocial.github.io/react-fwn]
 
 ```js
 import ReactFWN from 'react-fwn';

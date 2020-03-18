@@ -37,9 +37,8 @@ var ReactFWN = function ReactFWN(props) {
       }));
     }
   }, [scriptLoaded, containerRef.current, props]);
-  return React.createElement(Fragment, null, !scriptLoaded && React.createElement(Script //   url="//asset.fwcdn1.com/js/fwn.js"
-  , {
-    url: "//localhost:4000/js/fwn.js",
+  return React.createElement(Fragment, null, !scriptLoaded && React.createElement(Script, {
+    url: "//asset.fwcdn1.com/js/fwn.js",
     attributes: {
       id: 'fwn_script'
     },

@@ -16,7 +16,6 @@ export default {
   decorators: [withKnobs]
 }
 
-// const optionsAppId = text('App ID', 'Hv4b8ZJ3VjxHMg2H9zBEQyYn79CZZ3Zp') // dev
 const optionsAppId = () => text('App ID', 'xPWXeLTvXo-1A-_D8YmbAQbE6dt-y78x') // prod
 
 const optionsMode = selected =>
