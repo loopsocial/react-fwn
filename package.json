@@ -1,0 +1,67 @@
+{
+  "name": "react-fwn",
+  "version": "0.1.0",
+  "description": "Firework Network Embed React component",
+  "main": "dist/react-fwn.js",
+  "module": "dist/react-fwn.mjs",
+  "scripts": {
+    "build": "ROLLUP=true rollup -c",
+    "test": "jest",
+    "storybook": "npx start-storybook -p 6006",
+    "build-storybook": "npx build-storybook --output-dir=./docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loopsocial/react-fwn.git"
+  },
+  "keywords": [
+    "firework",
+    "embed"
+  ],
+  "author": "Stefan Backor <stefan.backor@loopapps.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loopsocial/react-fwn/issues"
+  },
+  "homepage": "https://loopsocial.github.io/react-fwn",
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-load-script": "0.0.6"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-docs": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addon-viewport": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/react": "^5.3.14",
+    "babel-loader": "^8.0.6",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "rollup": "^2.0.6",
+    "rollup-plugin-babel": "^4.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "npm run build",
+        "npm run build-storybook",
+        "lint-staged"
+      ],
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
