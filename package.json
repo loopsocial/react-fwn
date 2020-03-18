@@ -5,7 +5,7 @@
   "main": "dist/react-fwn.js",
   "module": "dist/react-fwn.mjs",
   "scripts": {
-    "build": "ROLLUP=true rollup -c",
+    "build": "ROLLUP=true rollup --config rollup.config.js",
     "test": "jest",
     "storybook": "npx start-storybook -p 6006",
     "build-storybook": "npx build-storybook --output-dir=./docs"
@@ -25,6 +25,7 @@
   },
   "homepage": "https://loopsocial.github.io/react-fwn",
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-load-script": "0.0.6"
@@ -60,12 +61,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build && git add ./dist && npm run build-storybook && git add ./docs && lint-staged",
+      "pre-commit": "lint-staged",
       "pre-push": "npm test"
     }
   },
   "lint-staged": {
     "src/**/*.js": [
+      "npm run build",
+      "git add ./dist --",
+      "npm run build-storybook",
+      "git add ./docs",
       "eslint --fix",
       "prettier --write"
     ]
