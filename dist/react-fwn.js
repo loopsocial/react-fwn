@@ -39,7 +39,6 @@ var ReactFWN = function ReactFWN(props) {
   var containerRef = React.useRef(null);
   React.useLayoutEffect(function () {
     if (scriptLoaded && containerRef.current) {
-      console.log(props, containerRef.current);
       window._fwn && window._fwn.render && window._fwn.render(_extends({}, props, {
         target: containerRef.current
       }));

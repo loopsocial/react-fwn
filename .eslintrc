@@ -23,6 +23,11 @@
       "node": {
         "extensions": [".js"]
       }
+    },
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect"
     }
   }
 }

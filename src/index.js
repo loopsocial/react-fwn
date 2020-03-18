@@ -9,7 +9,6 @@ const ReactFWN = props => {
 
   useLayoutEffect(() => {
     if (scriptLoaded && containerRef.current) {
-      console.log(props, containerRef.current)
       window._fwn &&
         window._fwn.render &&
         window._fwn.render({
