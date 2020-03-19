@@ -1,6 +1,6 @@
 {
   "name": "react-fwn",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Firework Network Embed React component",
   "main": "dist/react-fwn.js",
   "module": "dist/react-fwn.mjs",
@@ -46,6 +46,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
+    "bootstrap": "^4.4.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
@@ -55,6 +56,7 @@
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
+    "react-bootstrap": "^1.0.0-beta.17",
     "react-test-renderer": "^16.13.0",
     "rollup": "^2.0.6",
     "rollup-plugin-babel": "^4.4.0"

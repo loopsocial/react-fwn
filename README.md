@@ -4,12 +4,12 @@ Firework Network React component
 ## Install
 
 ```
-npm install --save react-fwn
+npm install --save react-fwn@latest
 ```
 
 ## Usage
 
-[Storybook][https://loopsocial.github.io/react-fwn]
+[Storybook](https://loopsocial.github.io/react-fwn)
 
 ```js
 import ReactFWN from 'react-fwn';

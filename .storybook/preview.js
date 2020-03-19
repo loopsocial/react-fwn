@@ -5,6 +5,9 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
 addParameters({
+  options: {
+    showRoots: false
+  },
   viewport: {
     viewports: INITIAL_VIEWPORTS
   }

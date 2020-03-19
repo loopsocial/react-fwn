@@ -49,6 +49,10 @@ var ReactFWN = function ReactFWN(props) {
       return setScriptLoaded(true);
     }
   }), React.createElement("div", {
+    "class": "fwn_videos",
+    style: {
+      width: '100%'
+    },
     ref: containerRef
   }), scriptError && React.createElement("div", null, "Firework Network script failed to load"));
 };

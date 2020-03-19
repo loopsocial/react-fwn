@@ -28,7 +28,11 @@ const ReactFWN = props => {
           onLoad={() => setScriptLoaded(true)}
         />
       )}
-      <div ref={containerRef} />
+      <div
+        className="fwn_videos"
+        style={{ width: '100%' }}
+        ref={containerRef}
+      />
       {scriptError && <div>Firework Network script failed to load</div>}
     </Fragment>
   )

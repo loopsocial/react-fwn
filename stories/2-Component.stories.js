@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { action } from '@storybook/addon-actions'
 import {
   withKnobs,
   text,
   boolean,
   number,
-  radios,
-  optionsKnob
+  radios
 } from '@storybook/addon-knobs'
 import ReactFWN from '../src/index'
 
@@ -29,12 +28,17 @@ const optionsMode = selected =>
     selected
   )
 
-const optionsOpenIn = () => radios('Open in', {
-  default: '',
-  self: '_self',
-  blank: '_blank',
-  modal: '_iframe'
-}, '')
+const optionsOpenIn = () =>
+  radios(
+    'Open in',
+    {
+      auto: '',
+      _self: '_self',
+      _blank: '_blank',
+      _modal: '_iframe'
+    },
+    ''
+  )
 
 const options = {
   mode: 'row',
@@ -49,6 +53,7 @@ export const Row = () => (
     app_id={optionsAppId()}
     mode={optionsMode('row')}
     open_in={optionsOpenIn()}
+    autoplay={boolean('Autoplay', true)}
   />
 )
 
@@ -59,6 +64,7 @@ export const Grid = () => (
     mode={optionsMode('grid')}
     max_videos={number('Max. videos', 30)}
     open_in={optionsOpenIn()}
+    autoplay={boolean('Autoplay', true)}
   />
 )
 
@@ -68,5 +74,25 @@ export const Pinned = () => (
     app_id={optionsAppId()}
     mode={optionsMode('pinned')}
     open_in={optionsOpenIn()}
+    autoplay={boolean('Autoplay', true)}
   />
+)
+
+export const Multiple = () => (
+  <Fragment>
+    <ReactFWN
+      {...options}
+      app_id={optionsAppId()}
+      mode={optionsMode('row')}
+      open_in={optionsOpenIn()}
+      autoplay={boolean('Autoplay', true)}
+    />
+    <ReactFWN
+      {...options}
+      app_id={optionsAppId()}
+      mode={optionsMode('row')}
+      open_in={optionsOpenIn()}
+      autoplay={boolean('Autoplay', true)}
+    />
+  </Fragment>
 )
