@@ -2,20 +2,22 @@ import React, { Fragment, useLayoutEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import Script from 'react-load-script'
 
-const ReactFWN = (intialProps) => {
-  const { script_url, ...props } = intialProps || {}
+const ReactFWN = (props) => {
+  const { script_url, api_host, ...rest } = props || {}
   const [scriptLoaded, setScriptLoaded] = useState(false)
   const [scriptError, setScriptError] = useState(false)
   const containerRef = useRef(null)
 
   useLayoutEffect(() => {
     if (scriptLoaded && containerRef.current) {
-      window._fwn &&
-        window._fwn.render &&
-        window._fwn.render({
-          ...props,
-          target: containerRef.current,
-        })
+      const options = {
+        ...rest,
+        target: containerRef.current,
+      }
+      if (api_host) {
+        options.api_host = api_host
+      }
+      window._fwn && window._fwn.render && window._fwn.render(options)
     }
   }, [scriptLoaded, containerRef.current, props])
 
@@ -23,7 +25,7 @@ const ReactFWN = (intialProps) => {
     <Fragment>
       {!scriptLoaded && (
         <Script
-          url={script_url || '//asset.fwcdn1.com/js/fwn.js'}
+          url={script_url || 'https://asset.fwcdn1.com/js/fwn.js'}
           attributes={{ id: 'fwn_script' }}
           onError={() => setScriptError(true)}
           onLoad={() => setScriptLoaded(true)}

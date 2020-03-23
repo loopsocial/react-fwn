@@ -35,10 +35,11 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 
-var ReactFWN = function ReactFWN(intialProps) {
-  var _ref = intialProps || {},
+var ReactFWN = function ReactFWN(props) {
+  var _ref = props || {},
       script_url = _ref.script_url,
-      props = _objectWithoutPropertiesLoose(_ref, ["script_url"]);
+      api_host = _ref.api_host,
+      rest = _objectWithoutPropertiesLoose(_ref, ["script_url", "api_host"]);
 
   var _useState = useState(false),
       scriptLoaded = _useState[0],
@@ -51,13 +52,19 @@ var ReactFWN = function ReactFWN(intialProps) {
   var containerRef = useRef(null);
   useLayoutEffect(function () {
     if (scriptLoaded && containerRef.current) {
-      window._fwn && window._fwn.render && window._fwn.render(_extends({}, props, {
+      var options = _extends({}, rest, {
         target: containerRef.current
-      }));
+      });
+
+      if (api_host) {
+        options.api_host = api_host;
+      }
+
+      window._fwn && window._fwn.render && window._fwn.render(options);
     }
   }, [scriptLoaded, containerRef.current, props]);
   return React.createElement(Fragment, null, !scriptLoaded && React.createElement(Script, {
-    url: script_url || "//asset.fwcdn1.com/js/fwn.js",
+    url: script_url || 'https://asset.fwcdn1.com/js/fwn.js',
     attributes: {
       id: 'fwn_script'
     },
