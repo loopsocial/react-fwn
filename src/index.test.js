@@ -1,9 +1,11 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
+import Script from 'react-load-script'
 import ReactFWN from './index'
 
 test('ReactFWN renders just fine', () => {
-  const component = shallow(<ReactFWN />)
+  const wrapper = mount(<ReactFWN />)
+  const scriptTag = wrapper.find(Script)
 
-  expect(component.text()).toEqual('<Script />')
+  expect(scriptTag.props().url).toEqual('https://asset.fwcdn1.com/js/fwn.js')
 })
