@@ -1,0 +1,38 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks'
+
+<Meta title="Welcome" />
+
+<img src="https://fireworktv.com/images/firework_logo_horizontal_black.png" style={{ width: '250px', marginBottom: '30px', marginLeft: '-25px' }} />
+
+## Welcome to Firework's ReactFWN
+
+ReactFWN is a React component for embeding Firework Network videos widget into React apps.
+
+Firework is a short video platform which enables infinite storytelling using videos across the internet.
+Download the **[Firework App](https://fireworktv.com/download)** and check out **[fireworktv.com](https://fireworktv.com)** for more.
+
+## Firework Network For publishers
+
+If you have already obtained publisher's `FIREWORK_APP_ID`, embed interactive feed of videos into your website using example bellow.
+ReactFWN wraps `fwn.js` script which exposes `fwn.render()` function. ReactFWN does not contain full widget code. All props are translated to fwn.render function.
+
+```
+npm install react-fwn@latest
+```
+
+```jsx
+import ReactFWN from 'react-fwn'
+
+<ReactFWN app_id={FIREWORK_APP_ID} mode={'grid'} open_in={'auto'} autoplay />
+```
+
+| Option     |             Values              |     Default |                                                                                                                             Description |
+| ---------- | :-----------------------------: | ----------: | --------------------------------------------------------------------------------------------------------------------------------------: |
+| app_id     |                                 | (mandatory) |                                                                                            App ID provided by Firework's FWN publisher. |
+| mode       |        row, grid, pinned        |         row |                                                                          Mode in which thumbnails should render. See examples for more. |
+| open_in    | auto, \_self, \_blank, \_iframe |        auto | Where should video open after user clicks the thumbnail. Defaults to `auto`, which determines best way for mobile and desktop browsers. |
+| autoplay   |           true, false           |        true |                                                                                           Autoplay first visible or featured thumbnail. |
+| max_videos |           <number\>            |             |                                                                         Max videos for grid mode infinie scroll. Empty means inifinite. |
+| onload     |                                 |             |                                                                                             Callback function triggered on widget load. |
+| onclick    |                                 |             |                                                                                         Callback function triggered on thumbnail click. |
+| onerror    |                                 |             |                                                                                                            Callback for various errors. |

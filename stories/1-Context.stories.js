@@ -5,29 +5,30 @@ import {
   text,
   boolean,
   number,
-  radios
+  radios,
 } from '@storybook/addon-knobs'
-import AlbumWrapper from './wrap/album'
-import BlogWrapper from './wrap/blog'
-import CarouselWrapper from './wrap/carousel'
 import ReactFWN from '../src/index'
+import AlbumWrapper from './wrappers/album'
+import BlogWrapper from './wrappers/blog'
+import CarouselWrapper from './wrappers/carousel'
+import config from './config'
 
 export default {
-  title: 'Embed/In context',
+  title: 'Within context',
   component: ReactFWN,
   decorators: [withKnobs],
-  parameters: { docs: { page: null } },
+  parameters: { docs: { disable: true } },
 }
 
-const optionsAppId = () => text('App ID', 'xPWXeLTvXo-1A-_D8YmbAQbE6dt-y78x') // prod
+const optionsAppId = () => text('App ID', config.app_id)
 
-const optionsMode = selected =>
+const optionsMode = (selected) =>
   radios(
     'Mode',
     {
       row: 'row',
       grid: 'grid',
-      pinned: 'pinned'
+      pinned: 'pinned',
     },
     selected
   )
@@ -36,19 +37,22 @@ const optionsOpenIn = () =>
   radios(
     'Open in',
     {
-      auto: '',
+      auto: 'auto',
       _self: '_self',
       _blank: '_blank',
-      _modal: '_iframe'
+      _modal: '_iframe',
     },
     ''
   )
 
 const options = {
-  mode: 'row',
-  open_in: '',
+  script_url: config.script_url,
+  api_host: config.api_host,
   placement: 'middle',
-  page_type: 'feed'
+  page_type: 'feed',
+  onload: action('Feed loaded'),
+  onclick: action('Feed clicked'),
+  onerror: action('Feed failed'),
 }
 
 export const Blog = () => (
@@ -75,7 +79,7 @@ export const Homepage = () => (
   </CarouselWrapper>
 )
 
-export const Ablum = () => (
+export const Album = () => (
   <AlbumWrapper>
     <ReactFWN
       {...options}

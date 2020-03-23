@@ -29,9 +29,9 @@ export default ({ children }) => (
               height="20"
               fill="none"
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               class="mx-3"
               role="img"
               viewBox="0 0 24 24"
@@ -349,7 +349,7 @@ export default ({ children }) => (
             <a
               class="btn btn-outline-secondary disabled"
               href="#"
-              tabindex="-1"
+              tabIndex="-1"
               aria-disabled="true"
             >
               Newer

@@ -20,7 +20,26 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-var ReactFWN = function ReactFWN(props) {
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+var ReactFWN = function ReactFWN(intialProps) {
+  var _ref = intialProps || {},
+      script_url = _ref.script_url,
+      props = _objectWithoutPropertiesLoose(_ref, ["script_url"]);
+
   var _useState = useState(false),
       scriptLoaded = _useState[0],
       setScriptLoaded = _useState[1];
@@ -38,7 +57,7 @@ var ReactFWN = function ReactFWN(props) {
     }
   }, [scriptLoaded, containerRef.current, props]);
   return React.createElement(Fragment, null, !scriptLoaded && React.createElement(Script, {
-    url: "//asset.fwcdn1.com/js/fwn.js",
+    url: script_url || "//asset.fwcdn1.com/js/fwn.js",
     attributes: {
       id: 'fwn_script'
     },
@@ -49,7 +68,7 @@ var ReactFWN = function ReactFWN(props) {
       return setScriptLoaded(true);
     }
   }), React.createElement("div", {
-    "class": "fwn_videos",
+    className: "fwn_videos",
     style: {
       width: '100%'
     },
@@ -61,8 +80,12 @@ ReactFWN.propTypes = {
   app_id: PropTypes.string,
   mode: PropTypes.string,
   open_in: PropTypes.string,
+  autoplay: PropTypes.bool,
   placement: PropTypes.string,
-  page_type: PropTypes.string
+  page_type: PropTypes.string,
+  onLoad: PropTypes.func,
+  onClick: PropTypes.func,
+  onError: PropTypes.func
 };
 ReactFWN.defaultProps = {};
 

@@ -8,16 +8,21 @@ import {
   radios
 } from '@storybook/addon-knobs'
 import ReactFWN from '../src/index'
+import config from './config'
 
 export default {
-  title: 'Embed',
+  title: 'Component',
   component: ReactFWN,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
+  parameters: { docs: { disable: true } },
 }
 
-const optionsAppId = () => text('App ID', 'xPWXeLTvXo-1A-_D8YmbAQbE6dt-y78x') // prod
+const optionsAppId = ({ group }) => text('App ID', config.app_id, group)
 
-const optionsMode = selected =>
+const optionsAppId_add = ({ group }) =>
+  text('App ID additional', config.app_id_additional, group)
+
+const optionsMode = ({ value, group }) =>
   radios(
     'Mode',
     {
@@ -25,56 +30,63 @@ const optionsMode = selected =>
       grid: 'grid',
       pinned: 'pinned'
     },
-    selected
+    value,
+    group
   )
 
-const optionsOpenIn = () =>
+const optionsOpenIn = ({ value, group }) =>
   radios(
     'Open in',
     {
-      auto: '',
+      auto: 'auto',
       _self: '_self',
       _blank: '_blank',
       _modal: '_iframe'
     },
-    ''
+    value,
+    group
   )
 
+const optionsAutoplay = ({ value, group }) => boolean('Autoplay', value, group)
+
 const options = {
-  mode: 'row',
-  open_in: '',
+  script_url: config.script_url,
+  api_host: config.api_host,
   placement: 'middle',
-  page_type: 'feed'
+  page_type: 'feed',
+  onload: action('Feed loaded'),
+  onclick: action('Feed clicked'),
+  onerror: action('Feed failed')
 }
 
 export const Row = () => (
   <ReactFWN
     {...options}
-    app_id={optionsAppId()}
-    mode={optionsMode('row')}
-    open_in={optionsOpenIn()}
-    autoplay={boolean('Autoplay', true)}
+    app_id={optionsAppId({})}
+    mode={optionsMode({ value: 'row' })}
+    open_in={optionsOpenIn({})}
+    autoplay={optionsAutoplay({ value: true })}
   />
 )
 
 export const Grid = () => (
   <ReactFWN
     {...options}
-    app_id={optionsAppId()}
-    mode={optionsMode('grid')}
+    app_id={optionsAppId({})}
+    mode={optionsMode({ value: 'grid' })}
     max_videos={number('Max. videos', 30)}
-    open_in={optionsOpenIn()}
-    autoplay={boolean('Autoplay', true)}
+    open_in={optionsOpenIn({})}
+    autoplay={optionsAutoplay({ value: true })}
   />
 )
 
 export const Pinned = () => (
   <ReactFWN
     {...options}
-    app_id={optionsAppId()}
-    mode={optionsMode('pinned')}
-    open_in={optionsOpenIn()}
-    autoplay={boolean('Autoplay', true)}
+    app_id={optionsAppId({})}
+    mode={optionsMode({ value: 'pinned' })}
+    open_in={optionsOpenIn({})}
+    autoplay={optionsAutoplay({ value: true })}
   />
 )
 
@@ -82,17 +94,17 @@ export const Multiple = () => (
   <Fragment>
     <ReactFWN
       {...options}
-      app_id={optionsAppId()}
-      mode={optionsMode('row')}
-      open_in={optionsOpenIn()}
-      autoplay={boolean('Autoplay', true)}
+      app_id={optionsAppId({ group: 'Embed #1' })}
+      mode={optionsMode({ value: 'row', group: 'Embed #1' })}
+      open_in={optionsOpenIn({ group: 'Embed #1' })}
+      autoplay={optionsAutoplay({ value: true, group: 'Embed #1' })}
     />
     <ReactFWN
       {...options}
-      app_id={optionsAppId()}
-      mode={optionsMode('row')}
-      open_in={optionsOpenIn()}
-      autoplay={boolean('Autoplay', true)}
+      app_id={optionsAppId_add({ group: 'Embed #2' })}
+      mode={optionsMode({ value: 'pinned', group: 'Embed #2' })}
+      open_in={optionsOpenIn({ group: 'Embed #2' })}
+      autoplay={optionsAutoplay({ value: true, group: 'Embed #2' })}
     />
   </Fragment>
 )

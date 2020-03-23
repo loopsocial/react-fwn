@@ -7,7 +7,7 @@
   "scripts": {
     "build": "ROLLUP=true rollup --config rollup.config.js",
     "test": "jest",
-    "storybook": "npx start-storybook -p 6006",
+    "storybook": "cross-env STORYBOOK_SCRIPT_URL=//localhost:4000/js/fwn.js STORYBOOK_API_HOST=//localhost:4000 STORYBOOK_APP_ID=some-publisher-client-id npx start-storybook --port 6006 --ci --quiet",
     "build-storybook": "npx build-storybook --output-dir=./docs"
   },
   "repository": {
@@ -16,6 +16,7 @@
   },
   "keywords": [
     "firework",
+    "videos",
     "embed"
   ],
   "author": "Stefan Backor <stefan.backor@loopapps.com>",
@@ -35,7 +36,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
-    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-docs": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
@@ -45,8 +46,10 @@
     "@storybook/react": "^5.3.14",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-react-html-attrs": "^2.1.0",
     "bootstrap": "^4.4.1",
+    "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
@@ -56,7 +59,10 @@
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
+    "prettier": "2.0.1",
     "react-bootstrap": "^1.0.0-beta.17",
+    "react-is": "^16.13.1",
+    "react-markdown": "^4.3.1",
     "react-test-renderer": "^16.13.0",
     "rollup": "^2.0.6",
     "rollup-plugin-babel": "^4.4.0"
