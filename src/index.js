@@ -1,8 +1,9 @@
-import React, { Fragment, useLayoutEffect, useRef, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Script from 'react-load-script'
 
 const ReactFWN = (props) => {
+  const { Fragment, useLayoutEffect, useRef, useState } = React // Only import defaults from modules, then decompose. This is due to CRA's webpack not working properly with esm modules.
   const { script_url, api_host, ...rest } = props || {}
   const [scriptLoaded, setScriptLoaded] = useState(false)
   const [scriptError, setScriptError] = useState(false)
