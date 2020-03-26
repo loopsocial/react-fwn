@@ -4,6 +4,9 @@ node_modules
 # dev
 .eslintcache
 
+# build
+/dist
+
 # misc
 .DS_Store
 .env.local

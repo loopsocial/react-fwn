@@ -1,10 +1,11 @@
 {
   "name": "react-fwn",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Firework Network Embed React component",
-  "main": "dist/cjs/react-fwn.js",
-  "module": "dist/esm/react-fwn.mjs",
+  "main": "dist/react-fwn.js",
+  "module": "dist/react-fwn.mjs",
   "scripts": {
+    "prepare": "npm run build",
     "build": "ROLLUP=true rollup --config rollup.config.js",
     "test": "jest",
     "storybook": "cross-env STORYBOOK_SCRIPT_URL=//localhost:4000/js/fwn.js STORYBOOK_API_HOST=//localhost:4000 STORYBOOK_APP_ID=some-publisher-client-id npx start-storybook --port 6006 --ci --quiet",
@@ -27,8 +28,6 @@
   "homepage": "https://loopsocial.github.io/react-fwn",
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
     "react-load-script": "0.0.6"
   },
   "peerDependencies": {
