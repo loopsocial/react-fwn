@@ -2,8 +2,8 @@
   "name": "react-fwn",
   "version": "1.0.3",
   "description": "Firework Network Embed React component",
-  "main": "dist/react-fwn.js",
-  "module": "dist/react-fwn.mjs",
+  "main": "dist/cjs/react-fwn.js",
+  "module": "dist/esm/react-fwn.mjs",
   "scripts": {
     "build": "ROLLUP=true rollup --config rollup.config.js",
     "test": "jest",
