@@ -49,7 +49,6 @@ ReactFWN.propTypes = {
   autoplay: PropTypes.bool,
   placement: PropTypes.string,
   page_type: PropTypes.string,
-  disable_tracking: PropTypes.bool,
   onLoad: PropTypes.func,
   onClick: PropTypes.func,
   onError: PropTypes.func,
