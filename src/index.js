@@ -46,6 +46,7 @@ ReactFWN.propTypes = {
   app_id: PropTypes.string,
   mode: PropTypes.string,
   open_in: PropTypes.string,
+  title: PropTypes.string,
   autoplay: PropTypes.bool,
   placement: PropTypes.string,
   page_type: PropTypes.string,

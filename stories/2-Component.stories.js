@@ -74,7 +74,8 @@ export const Grid = () => (
     {...options}
     app_id={optionsAppId({})}
     mode={optionsMode({ value: 'grid' })}
-    max_videos={number('Max. videos', 30)}
+    title={text('Title (Grid only)', 'Stories and Short Videos')}
+    max_videos={number('Max. videos (Grid only)', 30)}
     open_in={optionsOpenIn({})}
     autoplay={optionsAutoplay({ value: true })}
   />
