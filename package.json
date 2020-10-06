@@ -8,7 +8,7 @@
     "prepare": "npm run build",
     "build": "ROLLUP=true rollup --config rollup.config.js",
     "test": "jest",
-    "storybook": "cross-env STORYBOOK_SCRIPT_URL=//localhost:4000/js/fwn.js STORYBOOK_API_HOST=//localhost:4000 STORYBOOK_APP_ID=some-publisher-client-id npx start-storybook --port 6006 --ci --quiet",
+    "storybook": "cross-env STORYBOOK_SCRIPT_URL=//localhost:7000/fwn.js STORYBOOK_APP_ID=some-publisher-client-id npx start-storybook --port 6006 --ci --quiet",
     "build-storybook": "npx build-storybook --output-dir=./docs"
   },
   "repository": {
@@ -27,22 +27,24 @@
   },
   "homepage": "https://loopsocial.github.io/react-fwn",
   "dependencies": {
+    "object-hash": "^2.0.3",
     "prop-types": "^15.7.2",
-    "react-load-script": "0.0.6"
+    "react-load-script": "0.0.6",
+    "react-script-hook": "^1.2.1"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
-    "@storybook/addon-actions": "^5.3.17",
-    "@storybook/addon-console": "^1.2.1",
-    "@storybook/addon-docs": "^5.3.14",
-    "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/addon-links": "^5.3.14",
-    "@storybook/addon-viewport": "^5.3.14",
-    "@storybook/addons": "^5.3.14",
-    "@storybook/react": "^5.3.14",
+    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-console": "^1.2.2",
+    "@storybook/addon-docs": "^6.0.26",
+    "@storybook/addon-knobs": "^6.0.26",
+    "@storybook/addon-links": "^6.0.26",
+    "@storybook/addon-viewport": "^6.0.26",
+    "@storybook/addons": "^6.0.26",
+    "@storybook/react": "^6.0.26",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.1.0",
