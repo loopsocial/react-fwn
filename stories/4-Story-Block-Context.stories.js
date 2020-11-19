@@ -11,7 +11,19 @@ export default {
   parameters: { docs: { disable: true } },
 }
 
-export const Article = () => {
+export const ArticleBefore = () => {
+  useScript({
+    src: 'https://fw.tv/js/fwn.js',
+  })
+
+  return (
+    <ArticleWrapper>
+      <div className="article-before-image" />
+    </ArticleWrapper>
+  )
+}
+
+export const ArticleAfter = () => {
   useScript({
     src: 'https://fw.tv/js/fwn.js',
   })
@@ -25,7 +37,7 @@ export const Article = () => {
         style={{ height: '75vh', background: 'black' }}
       >
         <section>
-          <a href="https://fw.tv/firework" style={{color: 'black'}}>
+          <a href="https://fw.tv/firework" style={{ color: 'black' }}>
             Firework
           </a>
         </section>
