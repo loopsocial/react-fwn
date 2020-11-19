@@ -29,6 +29,8 @@
   "dependencies": {
     "object-hash": "^2.0.3",
     "prop-types": "^15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "react-load-script": "0.0.6",
     "react-script-hook": "^1.2.1"
   },
