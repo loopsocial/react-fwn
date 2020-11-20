@@ -23,7 +23,7 @@ export const ArticleBefore = () => {
   )
 }
 
-export const ArticleAfter = () => {
+const Article = ({ channel, video }) => {
   useScript({
     src: 'https://fw.tv/js/fwn.js',
   })
@@ -33,7 +33,8 @@ export const ArticleAfter = () => {
       <div
         className="fw-embed"
         data-widget="hero"
-        data-channel="firework"
+        data-channel={channel}
+        data-video={video}
         style={{ height: '75vh', background: 'black' }}
       >
         <section>
@@ -45,3 +46,11 @@ export const ArticleAfter = () => {
     </ArticleWrapper>
   )
 }
+
+export const ArticleAfter = () => (
+  <Article video="vJZkyn" />
+)
+
+export const ArticleWithFireworkChannel = () => (
+  <Article channel="firework" />
+)
