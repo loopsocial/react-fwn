@@ -48,7 +48,7 @@ const Article = ({ channel, video }) => {
 }
 
 export const ArticleAfter = () => (
-  <Article video="vJZkyn" />
+  <Article channel="talesfromtgiff" video="vJZkyn" />
 )
 
 export const ArticleWithFireworkChannel = () => (
