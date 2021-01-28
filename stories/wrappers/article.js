@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './article.css'
 
-export default ({ children }) => (
+export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
   <>
     <div class="container">
       <link
@@ -10,11 +10,11 @@ export default ({ children }) => (
       />
       <link href={css} rel="stylesheet" />
 
-      <header class="article-header py-3">
+      <header class="article-header py-3 container">
         <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 text-center">
+          <div class="col-4">
             <a class="article-header-logo text-dark" href="#">
-              Large
+              Blog Title
             </a>
           </div>
           <div class="col-8 d-flex justify-content-end align-items-center">
@@ -39,6 +39,7 @@ export default ({ children }) => (
         <div class="row">
           <div class="col-md-8 article-main">
             <div class="article-post">
+              {storyblockMobile}
               <h2 class="article-post-title">Sample article post</h2>
               <p class="article-post-meta">
                 January 1, 2014 by <a href="#">Mark</a>
@@ -124,6 +125,8 @@ export default ({ children }) => (
                 consectetur est at lobortis.
               </p>
             </div>
+
+            {row}
 
             <div class="article-post">
               <h2 class="article-post-title">Another article post</h2>
@@ -214,6 +217,8 @@ export default ({ children }) => (
                 bibendum nulla sed consectetur.
               </p>
             </div>
+
+            {storyblockDesktop}
 
             <div class="p-4">
               <h4 class="font-italic">Archives</h4>

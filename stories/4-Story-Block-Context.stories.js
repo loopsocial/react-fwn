@@ -54,3 +54,40 @@ export const ArticleAfter = () => (
 export const ArticleWithFireworkChannel = () => (
   <Article channel="firework" />
 )
+
+export const ArticleStoryblockV2 = () => {
+  useScript({
+    src:
+      'https://zeffo-git-feat-storyblock.firework.vercel.app/js/storyblock.js',
+  })
+  useScript({
+    src:
+      'https://zeffo-git-feat-storyblock.firework.vercel.app/js/embed-feed.js',
+  })
+
+  return (
+    <ArticleWrapper
+      storyblockMobile={
+        <div className="stretchy-wrapper d-block d-md-none">
+          <div>
+            <fw-storyblock app_id="H7fPnQM8qqOjD0WLNi6w4llBgznI9eBF" screen="mobile"></fw-storyblock>
+          </div>
+        </div>
+      }
+      storyblockDesktop={
+        <div className="stretchy-wrapper">
+          <div>
+            <fw-storyblock app_id="H7fPnQM8qqOjD0WLNi6w4llBgznI9eBF" screen="tablet,desktop"></fw-storyblock>
+          </div>
+        </div>
+      }
+      row={
+        <fw-embed-feed
+          app_id="H7fPnQM8qqOjD0WLNi6w4llBgznI9eBF"
+          mode="row"
+        ></fw-embed-feed>
+      }
+    />
+  )
+}
+
