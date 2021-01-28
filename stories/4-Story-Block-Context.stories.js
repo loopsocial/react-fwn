@@ -62,7 +62,7 @@ export const ArticleStoryblockV2 = () => {
   })
   useScript({
     src:
-      'https://zeffo-git-feat-storyblock.firework.vercel.app/js/embed-feed.js',
+      'https://asset.fwcdn1.com/js/embed-feed.js',
   })
 
   return (
@@ -84,6 +84,7 @@ export const ArticleStoryblockV2 = () => {
       row={
         <fw-embed-feed
           app_id="H7fPnQM8qqOjD0WLNi6w4llBgznI9eBF"
+          open_in="_iframe"
           mode="row"
         ></fw-embed-feed>
       }
