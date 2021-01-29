@@ -3,6 +3,7 @@ import useScript from 'react-script-hook'
 import { withKnobs } from '@storybook/addon-knobs'
 import ReactFWN from '../src/index'
 import ArticleWrapper from './wrappers/article'
+import ArticleFixedSidebarWrapper from './wrappers/article-fixed-sidebar'
 
 export default {
   title: 'Story Block within context',
@@ -70,20 +71,57 @@ export const ArticleStoryblockV2 = () => {
       storyblockMobile={
         <div className="stretchy-wrapper d-block d-md-none">
           <div>
-            <fw-storyblock app_id="H7fPnQM8qqOjD0WLNi6w4llBgznI9eBF" screen="mobile"></fw-storyblock>
+            <fw-storyblock app_id="q9o_hqTL4w8E3lyFFR9UPV-21CJN1QUK" screen="mobile"></fw-storyblock>
           </div>
         </div>
       }
       storyblockDesktop={
         <div className="stretchy-wrapper">
           <div>
-            <fw-storyblock app_id="H7fPnQM8qqOjD0WLNi6w4llBgznI9eBF" screen="tablet,desktop"></fw-storyblock>
+            <fw-storyblock app_id="q9o_hqTL4w8E3lyFFR9UPV-21CJN1QUK" screen="tablet,desktop"></fw-storyblock>
           </div>
         </div>
       }
       row={
         <fw-embed-feed
-          app_id="H7fPnQM8qqOjD0WLNi6w4llBgznI9eBF"
+          app_id="q9o_hqTL4w8E3lyFFR9UPV-21CJN1QUK"
+          open_in="_iframe"
+          mode="row"
+        ></fw-embed-feed>
+      }
+    />
+  )
+}
+
+export const ArticleStoryblockV2FixedSidebar = () => {
+  useScript({
+    src:
+      'https://zeffo-git-feat-storyblock.firework.vercel.app/js/storyblock.js',
+  })
+  useScript({
+    src:
+      'https://asset.fwcdn1.com/js/embed-feed.js',
+  })
+
+  return (
+    <ArticleFixedSidebarWrapper
+      storyblockMobile={
+        <div className="stretchy-wrapper d-block d-md-none">
+          <div>
+            <fw-storyblock app_id="q9o_hqTL4w8E3lyFFR9UPV-21CJN1QUK" screen="mobile"></fw-storyblock>
+          </div>
+        </div>
+      }
+      storyblockDesktop={
+        <div className="stretchy-wrapper">
+          <div>
+            <fw-storyblock app_id="q9o_hqTL4w8E3lyFFR9UPV-21CJN1QUK" screen="tablet,desktop"></fw-storyblock>
+          </div>
+        </div>
+      }
+      row={
+        <fw-embed-feed
+          app_id="q9o_hqTL4w8E3lyFFR9UPV-21CJN1QUK"
           open_in="_iframe"
           mode="row"
         ></fw-embed-feed>
