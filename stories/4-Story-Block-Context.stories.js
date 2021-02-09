@@ -71,14 +71,14 @@ export const ArticleStoryblockV2 = () => {
       storyblockMobile={
         <div className="stretchy-wrapper d-block d-md-none">
           <div>
-            <fw-storyblock app_id="q9o_hqTL4w8E3lyFFR9UPV-21CJN1QUK" screen="mobile"></fw-storyblock>
+            <fw-storyblock channel="demoads" autoplay="off" screen="mobile"></fw-storyblock>
           </div>
         </div>
       }
       storyblockDesktop={
         <div className="stretchy-wrapper">
           <div>
-            <fw-storyblock app_id="q9o_hqTL4w8E3lyFFR9UPV-21CJN1QUK" screen="tablet,desktop"></fw-storyblock>
+            <fw-storyblock channel="demoads" screen="tablet,desktop"></fw-storyblock>
           </div>
         </div>
       }
