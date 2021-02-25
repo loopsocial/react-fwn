@@ -44,10 +44,6 @@ const optionsPlacement = (selected) =>
     selected
   )
 
-const options = {
-  script_url: config.script_url,
-}
-
 const useButtonScript = (buttonOpts) => {
   const previousScriptUrl = useRef()
   const [scriptUrl, setScriptUrl] = useState()
@@ -65,8 +61,8 @@ const useButtonScript = (buttonOpts) => {
   useEffect(() => {
     previousScriptUrl.current = scriptUrl
     setScriptUrl(
-      (options.script_url || 'https://asset.fwcdn1.com/js/fwn.js') +
-        `?hash=${hash(buttonOpts)}`
+      (`${config.script_host}/js/fwn.js` ||
+        'https://asset.fwcdn1.com/js/fwn.js') + `?hash=${hash(buttonOpts)}`
     )
   }, [buttonOpts])
 

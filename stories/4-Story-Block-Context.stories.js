@@ -4,6 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import ReactFWN from '../src/index'
 import ArticleWrapper from './wrappers/article'
 import ArticleFixedSidebarWrapper from './wrappers/article-fixed-sidebar'
+import config from './config'
 
 export default {
   title: 'Story Block within context',
@@ -14,7 +15,7 @@ export default {
 
 export const ArticleBefore = () => {
   useScript({
-    src: 'https://fw.tv/js/fwn.js',
+    src: `${config.script_host}/js/fwn.js`,
   })
 
   return (
@@ -26,7 +27,7 @@ export const ArticleBefore = () => {
 
 const Article = ({ channel, video }) => {
   useScript({
-    src: 'https://fw.tv/js/fwn.js',
+    src: `${config.script_host}/js/fwn.js`,
   })
 
   return (
@@ -52,18 +53,14 @@ export const ArticleAfter = () => (
   <Article channel="talesfromtgiff" video="vJZkyn" />
 )
 
-export const ArticleWithFireworkChannel = () => (
-  <Article channel="firework" />
-)
+export const ArticleWithFireworkChannel = () => <Article channel="firework" />
 
 export const ArticleStoryblockV2 = () => {
   useScript({
-    src:
-      'https://zeffo-git-feat-storyblock.firework.vercel.app/js/storyblock.js',
+    src: `${config.script_host}/js/storyblock.js`,
   })
   useScript({
-    src:
-      'https://asset.fwcdn1.com/js/embed-feed.js',
+    src: `${config.script_host}/js/embed-feed.js`,
   })
 
   return (
@@ -71,14 +68,21 @@ export const ArticleStoryblockV2 = () => {
       storyblockMobile={
         <div className="stretchy-wrapper d-block d-md-none">
           <div>
-            <fw-storyblock channel="demoads" autoplay="false" screen="mobile"></fw-storyblock>
+            <fw-storyblock
+              channel="demoads"
+              autoplay="false"
+              screen="mobile"
+            ></fw-storyblock>
           </div>
         </div>
       }
       storyblockDesktop={
         <div className="stretchy-wrapper">
           <div>
-            <fw-storyblock channel="demoads" screen="tablet,desktop"></fw-storyblock>
+            <fw-storyblock
+              channel="demoads"
+              screen="tablet,desktop"
+            ></fw-storyblock>
           </div>
         </div>
       }
@@ -95,12 +99,10 @@ export const ArticleStoryblockV2 = () => {
 
 export const ArticleStoryblockV2FixedSidebar = () => {
   useScript({
-    src:
-      'https://zeffo-git-feat-storyblock.firework.vercel.app/js/storyblock.js',
+    src: `${config.script_host}/js/storyblock.js`,
   })
   useScript({
-    src:
-      'https://asset.fwcdn1.com/js/embed-feed.js',
+    src: `${config.script_host}/js/embed-feed.js`,
   })
 
   return (
@@ -108,14 +110,21 @@ export const ArticleStoryblockV2FixedSidebar = () => {
       storyblockMobile={
         <div className="stretchy-wrapper d-block d-md-none">
           <div>
-            <fw-storyblock channel="demoads" autoplay="false" screen="mobile"></fw-storyblock>
+            <fw-storyblock
+              channel="demoads"
+              autoplay="false"
+              screen="mobile"
+            ></fw-storyblock>
           </div>
         </div>
       }
       storyblockDesktop={
         <div className="stretchy-wrapper">
           <div>
-            <fw-storyblock channel="demoads" screen="tablet,desktop"></fw-storyblock>
+            <fw-storyblock
+              channel="demoads"
+              screen="tablet,desktop"
+            ></fw-storyblock>
           </div>
         </div>
       }
@@ -129,4 +138,3 @@ export const ArticleStoryblockV2FixedSidebar = () => {
     />
   )
 }
-

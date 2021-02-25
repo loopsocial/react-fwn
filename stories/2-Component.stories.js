@@ -5,7 +5,7 @@ import {
   text,
   boolean,
   number,
-  radios
+  radios,
 } from '@storybook/addon-knobs'
 import ReactFWN from '../src/index'
 import config from './config'
@@ -28,7 +28,7 @@ const optionsMode = ({ value, group }) =>
     {
       row: 'row',
       grid: 'grid',
-      pinned: 'pinned'
+      pinned: 'pinned',
     },
     value,
     group
@@ -41,7 +41,7 @@ const optionsOpenIn = ({ value, group }) =>
       auto: 'auto',
       _self: '_self',
       _blank: '_blank',
-      _modal: '_iframe'
+      _modal: '_iframe',
     },
     value,
     group
@@ -50,13 +50,13 @@ const optionsOpenIn = ({ value, group }) =>
 const optionsAutoplay = ({ value, group }) => boolean('Autoplay', value, group)
 
 const options = {
-  script_url: config.script_url,
+  script_url: `${config.script_host}/js/fwn.js`,
   api_host: config.api_host,
   placement: 'middle',
   page_type: 'feed',
   onload: action('Feed loaded'),
   onclick: action('Feed clicked'),
-  onerror: action('Feed failed')
+  onerror: action('Feed failed'),
 }
 
 export const Row = () => (

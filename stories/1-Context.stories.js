@@ -46,7 +46,7 @@ const optionsOpenIn = () =>
   )
 
 const options = {
-  script_url: config.script_url,
+  script_url: `${config.script_host}/js/fwn.js`,
   api_host: config.api_host,
   placement: 'middle',
   page_type: 'feed',
