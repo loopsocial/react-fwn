@@ -27,30 +27,18 @@ export const ArticleBefore = () => {
 
 const Article = ({ channel, video }) => {
   useScript({
-    src: `${config.script_host}/js/fwn.js`,
+    src: `${config.script_host}/js/storyblock.js`,
   })
 
   return (
     <ArticleWrapper>
-      <div
-        className="fw-embed"
-        data-widget="hero"
-        data-channel={channel}
-        data-video={video}
-        style={{ height: '75vh', background: 'black' }}
-      >
-        <section>
-          <a href="https://fw.tv/firework" style={{ color: 'black' }}>
-            Firework
-          </a>
-        </section>
-      </div>
+      <fw-storyblock channel={channel} video={video}></fw-storyblock>
     </ArticleWrapper>
   )
 }
 
 export const ArticleAfter = () => (
-  <Article channel="talesfromtgiff" video="vJZkyn" />
+  <Article channel="talesfromtgiff" video="gd8lML" />
 )
 
 export const ArticleWithFireworkChannel = () => <Article channel="firework" />
