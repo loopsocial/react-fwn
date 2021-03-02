@@ -1,6 +1,6 @@
 import React from 'react'
 import useScript from 'react-script-hook'
-import { withKnobs } from '@storybook/addon-knobs'
+import { withKnobs, text } from '@storybook/addon-knobs'
 import ReactFWN from '../src/index'
 import ArticleWrapper from './wrappers/article'
 import ArticleFixedSidebarWrapper from './wrappers/article-fixed-sidebar'
@@ -13,32 +13,23 @@ export default {
   parameters: { docs: { disable: true } },
 }
 
-export const ArticleBefore = () => {
-  useScript({
-    src: `${config.script_host}/js/fwn.js`,
-  })
-
-  return (
-    <ArticleWrapper>
-      <div className="article-before-image" />
-    </ArticleWrapper>
-  )
-}
-
 const Article = ({ channel, video }) => {
   useScript({
     src: `${config.script_host}/js/storyblock.js`,
   })
 
+  const channelKnob = text('Channel', channel || 'modernculture')
+  const videoKnob = text('Video', video || '')
+
   return (
     <ArticleWrapper>
-      <fw-storyblock channel={channel} video={video}></fw-storyblock>
+      <fw-storyblock channel={channelKnob} video={videoKnob}></fw-storyblock>
     </ArticleWrapper>
   )
 }
 
 export const ArticleAfter = () => {
-  return <Article channel="modernculture" />
+  return <Article />
 }
 
 export const ArticleWithFireworkChannel = () => <Article channel="firework" />
