@@ -1,10 +1,8 @@
 import React from 'react'
-import useScript from 'react-script-hook'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import ReactFWN from '../src/index'
 import ArticleWrapper from './wrappers/article'
 import ArticleFixedSidebarWrapper from './wrappers/article-fixed-sidebar'
-import config from './config'
 
 export default {
   title: 'Story Block within context',
@@ -13,17 +11,16 @@ export default {
   parameters: { docs: { disable: true } },
 }
 
-const Article = ({ channel, video }) => {
-  useScript({
-    src: `${config.script_host}/js/storyblock.js`,
-  })
-
+const Storyblock = ({ channel, video }) => {
   const channelKnob = text('Channel', channel || 'modernculture')
   const videoKnob = text('Video', video || '')
+  return <fw-storyblock channel={channelKnob} video={videoKnob}></fw-storyblock>
+}
 
+const Article = (props) => {
   return (
     <ArticleWrapper>
-      <fw-storyblock channel={channelKnob} video={videoKnob}></fw-storyblock>
+      <Storyblock {...props} />
     </ArticleWrapper>
   )
 }
@@ -35,13 +32,6 @@ export const ArticleAfter = () => {
 export const ArticleWithFireworkChannel = () => <Article channel="firework" />
 
 export const ArticleStoryblockV2 = () => {
-  useScript({
-    src: `${config.script_host}/js/storyblock.js`,
-  })
-  useScript({
-    src: `${config.script_host}/js/embed-feed.js`,
-  })
-
   return (
     <ArticleWrapper
       storyblockMobile={
@@ -77,13 +67,6 @@ export const ArticleStoryblockV2 = () => {
 }
 
 export const ArticleStoryblockV2FixedSidebar = () => {
-  useScript({
-    src: `${config.script_host}/js/storyblock.js`,
-  })
-  useScript({
-    src: `${config.script_host}/js/embed-feed.js`,
-  })
-
   return (
     <ArticleFixedSidebarWrapper
       storyblockMobile={

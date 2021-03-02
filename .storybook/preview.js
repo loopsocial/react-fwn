@@ -6,13 +6,13 @@ addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
 addParameters({
   options: {
-    showRoots: false
+    showRoots: false,
   },
   viewport: {
-    viewports: INITIAL_VIEWPORTS
-  }
+    viewports: INITIAL_VIEWPORTS,
+  },
 })
 
 setConsoleOptions({
-  panelExclude: []
+  panelExclude: [],
 })
