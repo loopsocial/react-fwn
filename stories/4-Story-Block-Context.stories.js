@@ -37,9 +37,9 @@ const Article = ({ channel, video }) => {
   )
 }
 
-export const ArticleAfter = () => (
-  <Article channel="talesfromtgiff" video="gd8lML" />
-)
+export const ArticleAfter = () => {
+  return <Article channel="modernculture" />
+}
 
 export const ArticleWithFireworkChannel = () => <Article channel="firework" />
 
