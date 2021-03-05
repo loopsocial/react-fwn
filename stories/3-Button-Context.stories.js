@@ -48,6 +48,7 @@ const ChannelButton = () => {
       target={buttonOpts.target}
       channel={buttonOpts.channel}
       text={buttonOpts.title}
+      player="v3"
     >
       <a href={`https://fireworktv.com/ch/${buttonOpts.channel}`}>
         {buttonOpts.title}

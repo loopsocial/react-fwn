@@ -14,7 +14,13 @@ export default {
 const Storyblock = ({ channel, video }) => {
   const channelKnob = text('Channel', channel || 'modernculture')
   const videoKnob = text('Video', video || '')
-  return <fw-storyblock channel={channelKnob} video={videoKnob}></fw-storyblock>
+  return (
+    <fw-storyblock
+      channel={channelKnob}
+      video={videoKnob}
+      player="v3"
+    ></fw-storyblock>
+  )
 }
 
 const Article = (props) => {

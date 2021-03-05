@@ -63,6 +63,7 @@ export const Blog = () => (
       mode={optionsMode('row')}
       open_in={optionsOpenIn()}
       autoplay={boolean('Autoplay', true)}
+      player="v3"
     />
   </BlogWrapper>
 )
@@ -75,6 +76,7 @@ export const Homepage = () => (
       mode={optionsMode('row')}
       open_in={optionsOpenIn()}
       autoplay={boolean('Autoplay', true)}
+      player="v3"
     />
   </CarouselWrapper>
 )
@@ -87,6 +89,7 @@ export const Album = () => (
       mode={optionsMode('grid')}
       open_in={optionsOpenIn()}
       autoplay={boolean('Autoplay', true)}
+      player="v3"
     />
   </AlbumWrapper>
 )
