@@ -9,7 +9,7 @@
     "build": "ROLLUP=true rollup --config rollup.config.js",
     "test": "npx jest",
     "storybook": "cross-env STORYBOOK_SCRIPT_HOST=//localhost:8000 STORYBOOK_APP_ID=some-publisher-client-id npx start-storybook --port 6006 --ci --quiet",
-    "build-storybook": "cross-env STORYBOOK_SCRIPT_HOST=//zeffo-git-player3-firework.vercel.app npx build-storybook --output-dir=./docs"
+    "build-storybook": "cross-env STORYBOOK_SCRIPT_HOST=//asset.fwcdn2.com npx build-storybook --output-dir=./docs"
   },
   "repository": {
     "type": "git",
