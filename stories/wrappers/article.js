@@ -1,7 +1,13 @@
 import React from 'react'
 import css from './article.css'
 
-export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
+export default ({
+  children,
+  articleSlot1,
+  storyblockMobile,
+  storyblockDesktop,
+  row,
+}) => (
   <>
     <div class="container">
       <link
@@ -34,7 +40,6 @@ export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
     {children}
 
     <div className="container with-padding-top">
-
       <main role="main" class="container">
         <div class="row">
           <div class="col-md-8 article-main">
@@ -47,16 +52,16 @@ export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
 
               <p>
                 This article post shows a few different types of content that’s
-                supported and styled with Bootstrap. Basic typography, images, and
-                code are all supported.
+                supported and styled with Bootstrap. Basic typography, images,
+                and code are all supported.
               </p>
               <hr />
               <p>
                 Cum sociis natoque penatibus et magnis{' '}
                 <a href="#">dis parturient montes</a>, nascetur ridiculus mus.
-                Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-                vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
-                consectetur purus sit amet fermentum.
+                Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+                venenatis vestibulum. Sed posuere consectetur est at lobortis.
+                Cras mattis consectetur purus sit amet fermentum.
               </p>
               <blockquote>
                 <p>
@@ -70,12 +75,15 @@ export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
                 mattis consectetur purus sit amet fermentum. Aenean lacinia
                 bibendum nulla sed consectetur.
               </p>
+
+              {!!articleSlot1 && <p>{articleSlot1}</p>}
+
               <h2>Heading</h2>
               <p>
                 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
                 auctor. Duis mollis, est non commodo luctus, nisi erat porttitor
-                ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac
-                consectetur ac, vestibulum at eros.
+                ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta
+                ac consectetur ac, vestibulum at eros.
               </p>
               <h3>Sub-heading</h3>
               <p>
@@ -94,14 +102,14 @@ export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
               <p>
                 Cum sociis natoque penatibus et magnis dis parturient montes,
                 nascetur ridiculus mus. Aenean lacinia bibendum nulla sed
-                consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce
-                dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-                ut fermentum massa justo sit amet risus.
+                consectetur. Etiam porta sem malesuada magna mollis euismod.
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus.
               </p>
               <ul>
                 <li>
-                  Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                  et.
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur et.
                 </li>
                 <li>Donec id elit non mi porta gravida at eget metus.</li>
                 <li>Nulla vitae elit libero, a pharetra augue.</li>
@@ -117,7 +125,8 @@ export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
                   nascetur ridiculus mus.
                 </li>
                 <li>
-                  Maecenas sed diam eget risus varius blandit sit amet non magna.
+                  Maecenas sed diam eget risus varius blandit sit amet non
+                  magna.
                 </li>
               </ol>
               <p>
@@ -137,9 +146,9 @@ export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
               <p>
                 Cum sociis natoque penatibus et magnis{' '}
                 <a href="#">dis parturient montes</a>, nascetur ridiculus mus.
-                Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-                vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
-                consectetur purus sit amet fermentum.
+                Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+                venenatis vestibulum. Sed posuere consectetur est at lobortis.
+                Cras mattis consectetur purus sit amet fermentum.
               </p>
               <blockquote>
                 <p>
@@ -156,8 +165,8 @@ export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
               <p>
                 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
                 auctor. Duis mollis, est non commodo luctus, nisi erat porttitor
-                ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac
-                consectetur ac, vestibulum at eros.
+                ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta
+                ac consectetur ac, vestibulum at eros.
               </p>
             </div>
 
@@ -170,14 +179,14 @@ export default ({ children, storyblockMobile, storyblockDesktop, row }) => (
               <p>
                 Cum sociis natoque penatibus et magnis dis parturient montes,
                 nascetur ridiculus mus. Aenean lacinia bibendum nulla sed
-                consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce
-                dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-                ut fermentum massa justo sit amet risus.
+                consectetur. Etiam porta sem malesuada magna mollis euismod.
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus.
               </p>
               <ul>
                 <li>
-                  Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                  et.
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur et.
                 </li>
                 <li>Donec id elit non mi porta gravida at eget metus.</li>
                 <li>Nulla vitae elit libero, a pharetra augue.</li>

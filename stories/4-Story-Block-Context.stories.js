@@ -11,7 +11,7 @@ export default {
   parameters: { docs: { disable: true } },
 }
 
-const Storyblock = ({ channel, video }) => {
+const Storyblock = ({ channel, video, ...rest }) => {
   const channelKnob = text('Channel', channel || 'modernculture')
   const videoKnob = text('Video', video || '')
   return (
@@ -19,6 +19,7 @@ const Storyblock = ({ channel, video }) => {
       channel={channelKnob}
       video={videoKnob}
       player="v3"
+      {...rest}
     ></fw-storyblock>
   )
 }
@@ -33,6 +34,14 @@ const Article = (props) => {
 
 export const ArticleAfter = () => {
   return <Article />
+}
+
+export const ArticleContent = () => {
+  return (
+    <ArticleWrapper
+      articleSlot1={<Storyblock channel="modernculture" />}
+    ></ArticleWrapper>
+  )
 }
 
 export const ArticleWithFireworkChannel = () => <Article channel="firework" />
