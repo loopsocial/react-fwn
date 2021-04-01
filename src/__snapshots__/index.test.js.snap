@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactFWN component should render <fw-storyblock /> custom component for mode=story 1`] = `
+<fw-storyblock
+  arg1="value1"
+  arg2="value2"
+  mode="story"
+/>
+`;
+
+exports[`ReactFWN component should render default <fw-embed-feed /> custom component 1`] = `
+<fw-embed-feed
+  arg1="value1"
+  arg2="value2"
+/>
+`;
