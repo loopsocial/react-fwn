@@ -1,10 +1,7 @@
 {
-  "setupFiles": ["<rootDir>setup/tests.js"],
-  "snapshotSerializers": ["enzyme-to-json/serializer"],
   "clearMocks": true,
   "rootDir": "./",
   "transform": {
-    "^.+\\.[tj]sx?$": "babel-jest",
-    "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
+    "^.+\\.[tj]sx?$": "babel-jest"
   }
 }

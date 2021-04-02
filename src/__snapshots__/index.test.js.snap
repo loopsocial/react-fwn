@@ -1,16 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ReactFWN component should inject component's script 1`] = `
+Array [
+  Array [
+    <script
+      src="https://asset.fwcdn2.com/js/fwn.js"
+      type="text/javascript"
+    />,
+  ],
+]
+`;
+
 exports[`ReactFWN component should render <fw-storyblock /> custom component for mode=story 1`] = `
-<fw-storyblock
-  arg1="value1"
-  arg2="value2"
-  mode="story"
-/>
+<div>
+  <fw-storyblock
+    arg1="value1"
+    arg2="value2"
+    mode="story"
+  />
+</div>
 `;
 
 exports[`ReactFWN component should render default <fw-embed-feed /> custom component 1`] = `
-<fw-embed-feed
-  arg1="value1"
-  arg2="value2"
-/>
+<div>
+  <fw-embed-feed
+    arg1="value1"
+    arg2="value2"
+  />
+</div>
 `;

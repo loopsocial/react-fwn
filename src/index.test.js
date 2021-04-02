@@ -1,29 +1,37 @@
 import React from 'react'
-import { mount } from 'enzyme'
-import Script from 'react-load-script'
+import { render } from '@testing-library/react'
 import ReactFWN from './index'
 
-describe('ReactFWN component', () => {
-  test("should inject component's script", () => {
-    const wrapper = mount(<ReactFWN />)
+const headAppendChildMock = jest.spyOn(document.head, 'appendChild')
 
-    expect(wrapper.find(Script).props().url).toEqual(
-      'https://asset.fwcdn2.com/js/fwn.js'
-    )
+describe('ReactFWN component', () => {
+  it("should inject component's script", () => {
+    const { rerender, unmount } = render(<ReactFWN />)
+
+    unmount()
+    rerender(<ReactFWN />)
+
+    unmount()
+    rerender(<ReactFWN />)
+
+    expect(headAppendChildMock.mock.calls).toMatchSnapshot()
   })
 
-  test('should render default <fw-embed-feed /> custom component', () => {
-    const wrapper = mount(<ReactFWN arg1="value1" arg2="value2" />)
-
-    expect(wrapper.find('fw-embed-feed')).toMatchSnapshot()
-    expect(wrapper.find(Script).props().url).toEqual(
-      'https://asset.fwcdn2.com/js/fwn.js'
+  it('should render default <fw-embed-feed /> custom component', () => {
+    const { container, getByText } = render(
+      <ReactFWN arg1="value1" arg2="value2" />
     )
+
+    getByText((_, element) => element.tagName.toLowerCase() === 'fw-embed-feed')
+    expect(container).toMatchSnapshot()
   })
 
   test('should render <fw-storyblock /> custom component for mode=story', () => {
-    const wrapper = mount(<ReactFWN mode="story" arg1="value1" arg2="value2" />)
+    const { container, getByText } = render(
+      <ReactFWN mode="story" arg1="value1" arg2="value2" />
+    )
 
-    expect(wrapper.find('fw-storyblock')).toMatchSnapshot()
+    getByText((_, element) => element.tagName.toLowerCase() === 'fw-storyblock')
+    expect(container).toMatchSnapshot()
   })
 })

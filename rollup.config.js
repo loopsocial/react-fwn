@@ -6,11 +6,11 @@ export default {
   input: './src/index.js',
   output: [
     { format: 'cjs', file: meta.main, exports: 'named' },
-    { format: 'es', file: meta.module }
+    { format: 'es', file: meta.module },
   ],
 
   external: Object.keys(meta.dependencies).concat(
     Object.keys(meta.peerDependencies)
   ),
-  plugins: [babel()]
+  plugins: [babel()],
 }

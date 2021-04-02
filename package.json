@@ -1,6 +1,6 @@
 {
   "name": "react-fwn",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Firework Network Embed React component",
   "main": "dist/react-fwn.js",
   "module": "dist/react-fwn.mjs",
@@ -27,15 +27,12 @@
   },
   "homepage": "https://loopsocial.github.io/react-fwn",
   "dependencies": {
-    "object-hash": "^2.0.3",
-    "prop-types": "^15.7.2",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
-    "react-load-script": "0.0.6",
-    "react-script-hook": "^1.2.1"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
@@ -47,15 +44,13 @@
     "@storybook/addon-viewport": "^6.1.20",
     "@storybook/addons": "^6.1.20",
     "@storybook/react": "^6.1.20",
+    "@testing-library/react": "^11.2.6",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-react-html-attrs": "^2.1.0",
     "bootstrap": "^4.4.1",
     "cross-env": "^7.0.2",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.4.4",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-prettier": "^3.1.2",
