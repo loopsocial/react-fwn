@@ -6,7 +6,7 @@
   "module": "dist/react-fwn.mjs",
   "scripts": {
     "prepare": "npm run build",
-    "build": "ROLLUP=true rollup --config rollup.config.js",
+    "build": "ROLLUP=true npx rollup --config rollup.config.js",
     "test": "npx jest",
     "storybook": "cross-env STORYBOOK_SCRIPT_HOST=//localhost:8000 STORYBOOK_APP_ID=some-publisher-client-id npx start-storybook --port 6006 --ci --quiet",
     "build-storybook": "cross-env STORYBOOK_SCRIPT_HOST=//asset.fwcdn2.com npx build-storybook --output-dir=./docs"
@@ -63,7 +63,7 @@
     "react-is": "^16.13.1",
     "react-markdown": "^4.3.1",
     "react-test-renderer": "^16.13.0",
-    "rollup": "^2.0.6",
+    "rollup": "^2.44.0",
     "rollup-plugin-babel": "^4.4.0"
   },
   "husky": {
