@@ -1,6 +1,6 @@
 {
   "name": "react-fwn",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Firework Network Embed React component",
   "main": "dist/react-fwn.js",
   "module": "dist/react-fwn.mjs",
